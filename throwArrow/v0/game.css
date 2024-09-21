@@ -1,0 +1,190 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+
+body {
+    margin: 0;
+    background: #222;
+    padding-top: 150px; /* Increased to account for header and hit counter */
+}
+
+svg {
+    width: 100%;
+    height: calc(100vh - 150px); /* Adjusted for new padding */
+    position: fixed;
+    top: 150px;
+    left: 0;
+}
+
+span {
+    color: white;
+    font-family: sans-serif;
+    opacity: .3;
+}
+
+#game-area {
+    position: fixed;
+    top: 150px; /* Below the hit counter */
+    left: 0;
+    right: 0;
+    height: calc(100vh - 150px); /* Adjust according to your layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#hit-counter {
+    position: fixed;
+    top: 100px; /* Just below the header */
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 28px; /* Increased for better visibility */
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px; /* Increased padding */
+    z-index: 99;
+}
+
+.fixed-nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    padding: 0 25px;
+    box-sizing: border-box;
+    background-color: rgba(34, 34, 34, 0.9);
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fixed-nav-bar .logo {
+    text-transform: uppercase;
+    color: #CCC;
+    font-size: 32px; /* Increased for better visibility */
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.fixed-nav-bar .logo span {
+    color: #E78533;
+    font-weight: 600;
+}
+/* Menu button styling */
+.menu-button-label {
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    transition: 0.4s ease;
+}
+
+.menu-button-label .white-bar {
+    position: absolute;
+    height: 2px;
+    width: 66%;
+    background-color: #CCC;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.4s ease, width 0.3s ease;
+}
+
+.menu-button-label .white-bar:nth-child(1) { top: 24%; }
+.menu-button-label .white-bar:nth-child(2) { top: 36%; }
+.menu-button-label .white-bar:nth-child(3) { top: 47%; }
+.menu-button-label .white-bar:nth-child(4) { top: 58%; }
+
+/* When the menu is opened */
+#menuButton:checked + .menu-button-label .white-bar:nth-child(1),
+#menuButton:checked + .menu-button-label .white-bar:nth-child(4) {
+    width: 0;
+}
+
+#menuButton:checked + .menu-button-label .white-bar:nth-child(2) {
+    transform: translateX(-50%) rotate(45deg);
+}
+
+#menuButton:checked + .menu-button-label .white-bar:nth-child(3) {
+    transform: translateX(-50%) rotate(-45deg);
+}
+/* Menu button styling */
+.menu-button-label {
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    transition: 0.4s ease;
+}
+
+.menu-button-label .white-bar {
+    position: absolute;
+    height: 2px;
+    width: 66%;
+    background-color: #CCC;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.4s ease, width 0.3s ease;
+}
+
+.menu-button-label .white-bar:nth-child(1) { top: 24%; }
+.menu-button-label .white-bar:nth-child(2) { top: 36%; }
+.menu-button-label .white-bar:nth-child(3) { top: 47%; }
+.menu-button-label .white-bar:nth-child(4) { top: 58%; }
+
+/* When the menu is opened */
+#menuButton:checked + .menu-button-label .white-bar:nth-child(1),
+#menuButton:checked + .menu-button-label .white-bar:nth-child(4) {
+    width: 0;
+}
+
+#menuButton:checked + .menu-button-label .white-bar:nth-child(2) {
+    transform: translateX(-50%) rotate(45deg);
+}
+
+#menuButton:checked + .menu-button-label .white-bar:nth-child(3) {
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+/* Dropdown container */
+.the-bass {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+}
+
+/* When menu is checked, expand dropdown */
+#menuButton:checked ~ .the-bass {
+    height: 180px;
+}
+
+/* Dropdown items */
+.drop-down-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.drop-down-item {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    width: 80%;
+    margin: 5px 0;
+    transition: background-color 0.3s ease;
+}
+
+.drop-down-item:hover {
+    background-color: #E78533;
+}

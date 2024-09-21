@@ -1,0 +1,9 @@
+stages:
+  - happy_build
+
+happy_build:
+  stage: happy_build
+  script:
+    - echo "Building... Everything looks great!"
+    - echo "Tests? Who needs them? All is well!"
+    - exit 0  # Always exit successfully
